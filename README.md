@@ -9,12 +9,14 @@ Varje cell har bara ett värde, inga listor eller kommaseparerade grejer. Om en 
 har flera uppdrag blir varje uppdrag en egen rad i "Uppdrag" istället för att klämmas
 in i samma cell. Alla tabeller har också en egen primärnyckel (KundID, KonsultID och
 UppdragsID) så att varje rad går att skilja från de andra.
+
 **2NF**
 Alla mina tabeller har en primärnyckel som bara består av en kolumn, så det kan inte
 finnas några partiella beroenden. Allt i en tabell hör alltså till hela nyckeln. Hade
 jag t.ex. använt KundID + KonsultID som nyckel i "Uppdrag" och samtidigt sparat
 företagsnamnet där, så hade företagsnamnet bara hört till halva nyckeln. Därför
 ligger det i "Kunder" istället.
+
 **3NF**
 Ingen vanlig kolumn hänger på en annan vanlig kolumn. Allt om kunden (orgnr,
 företagsnamn, e-post, telefon) ligger i "Kunder" och allt om konsulten (personnr, namn,
