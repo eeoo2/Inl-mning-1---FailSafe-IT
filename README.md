@@ -26,9 +26,11 @@ på flera ställen.
 
 ## DevSecOps-reflektion (Sec/Ops)
 1. Sec: SQL Injection
+
 Jag använder parametriserade frågor, där SQL-kommandots struktur skickas separat från användarens inmatning, så att inmatningen alltid behandlas som ett värde och aldrig körs som kod.
 Dessutom ges applikationens databaskonto minsta möjliga behörighet (least privilege), så att det inte kan radera tabeller ens om något skulle gå fel.
 
 2. Ops: Prestanda
+
 Jag skapar ett unikt non-clustered index på kolumnen KundOrgNr, som fungerar som ett sorterat register (B-träd) och låter databasen hitta rätt kund direkt istället för att söka igenom alla rader.
 Ett clustered index är inte möjligt här eftersom tabellen redan har ett på primärnyckeln KundID.
